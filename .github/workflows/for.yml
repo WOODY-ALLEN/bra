@@ -34,15 +34,12 @@ jobs:
           echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
 
       - uses: actions/checkout@v1
-      - name: Validate JSON
+      - name: Validate JSON pwd
         run: |
           echo "PASS_LOG=True" >> $GITHUB_ENV
           cd json/json2
           pwd
+          path=$(pwd)
           ls
-          cp /home/runner/work/bra/bra/json/json2 /json22
-      - name: Validate JSON
-        uses: docker://orrosenblatt/validate-json-action:latest
-        env:
-          INPUT_SCHEMA: ./json22/test.json
-          INPUT_JSONS:  ./json22/test2.json,./json22/test3.json
+          cp $path /json22
+
