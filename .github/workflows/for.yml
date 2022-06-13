@@ -37,15 +37,10 @@ jobs:
       - name: Validate JSON pwd
         run: |
           echo "PASS_LOG=True" >> $GITHUB_ENV
-          pwd
-          path=$(pwd)
-          ls
-          cp  $path/json/json2/test.json test.json
-          cd
-          cat test.json
 
-#      - name: Validate JSON
-#        uses: docker://orrosenblatt/validate-json-action:latest
-#        env:
-#          INPUT_SCHEMA: ./test.json
-#          INPUT_JSONS: /home/runner/work/bra/bra/json/json2/test2.json,/home/runner/work/bra/bra/json/json2/test3.json
+
+      - name: Validate JSON
+        uses: docker://orrosenblatt/validate-json-action:latest
+        env:
+          INPUT_SCHEMA: /home/runner/work/bra/bra/json/json2/test.json
+          INPUT_JSONS: /home/runner/work/bra/bra/json/json2/test2.json,/home/runner/work/bra/bra/json/json2/test3.json
