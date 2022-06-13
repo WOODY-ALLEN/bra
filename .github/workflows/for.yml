@@ -41,7 +41,7 @@ jobs:
           pwd
           path=$(pwd)
           ls
-          cp -r $path/* /json2
+          cp -r $path/* ./json2
           cd /json2
           pwd
           ls
