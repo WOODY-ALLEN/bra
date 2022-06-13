@@ -40,7 +40,7 @@ jobs:
           cd json/json2
           pwd
           ls
-          cp json/json2 /json22
+          cp /home/runner/work/bra/bra/json/json2 /json22
       - name: Validate JSON
         uses: docker://orrosenblatt/validate-json-action:latest
         env:
