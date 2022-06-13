@@ -38,8 +38,8 @@ jobs:
         run: |
           echo "PASS_LOG=True" >> $GITHUB_ENV
           pwd
+          path=$(pwd)
           ls
-          path = 'pwd'
           cp  $path/test.json test.json
 #      - name: Validate JSON
 #        uses: docker://orrosenblatt/validate-json-action:latest
