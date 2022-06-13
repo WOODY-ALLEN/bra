@@ -40,11 +40,13 @@ jobs:
           pwd
           ls
           echo "okok"
+          rm -rf /json2022
+          mkdir /json2022
           cd json/json2
           pwd
           path=$(pwd)
           ls
-          cp -r $path/* ./json2/
+          cp -r $path/* /json2022
           cd /json2
           pwd
           ls
