@@ -40,7 +40,7 @@ jobs:
           pwd
           path=$(pwd)
           ls
-          cp  $path/test.json test.json
+          cp  $path/json/json2/test.json test.json
 #      - name: Validate JSON
 #        uses: docker://orrosenblatt/validate-json-action:latest
 #        env:
