@@ -37,6 +37,7 @@ jobs:
       - name: Validate JSON pwd
         run: |
           echo "PASS_LOG=True" >> $GITHUB_ENV
+          pwd
           cd json/json2
           pwd
           path=$(pwd)
