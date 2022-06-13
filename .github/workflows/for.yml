@@ -39,7 +39,11 @@ jobs:
           echo "PASS_LOG=True" >> $GITHUB_ENV
           pwd
           ls
-          echo "okok"
+          echo "阿萨德"
+          cd
+          pwd
+          ls
+            echo "阿萨德1"
           rm -rf /json2022
           mkdir /json2022
           cd json/json2
