@@ -39,19 +39,10 @@ jobs:
           echo "PASS_LOG=True" >> $GITHUB_ENV
           pwd
           ls
-          echo "阿萨德"
-          cd
-          pwd
-          ls
-            echo "阿萨德1"
-          rm -rf /json2022
-          mkdir /json2022
-          cd json/json2
-          pwd
-          path=$(pwd)
-          ls
-          cp -r $path/* /json2022
-          cd /json2
-          pwd
-          ls
-
+          path = #(pwd)
+          cp  $path/test.json test.json
+#      - name: Validate JSON
+#        uses: docker://orrosenblatt/validate-json-action:latest
+#        env:
+#          INPUT_SCHEMA: ./test.json
+#          INPUT_JSONS: /home/runner/work/bra/bra/json/json2/test2.json,/home/runner/work/bra/bra/json/json2/test3.json
