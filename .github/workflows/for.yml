@@ -36,7 +36,12 @@ jobs:
       - uses: actions/checkout@v1
       - name: Validate JSON
         run: |
-          cp "json/json2/" /json2
+
+          echo "PASS_LOG=True" >> $GITHUB_ENV
+          cd json/json2
+          pwd
+          ls
+          cp json/json2/ /json2
       - name: Validate JSON
         uses: docker://orrosenblatt/validate-json-action:latest
         env:
