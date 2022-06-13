@@ -40,9 +40,9 @@ jobs:
           cd json/json2
           pwd
           ls
-          cp json/json2/ /json2
+          cp json/json2 /json22
       - name: Validate JSON
         uses: docker://orrosenblatt/validate-json-action:latest
         env:
-          INPUT_SCHEMA: ./json2/test.json
-          INPUT_JSONS:  ./json2/test2.json,./json2/test3.json
+          INPUT_SCHEMA: ./json22/test.json
+          INPUT_JSONS:  ./json22/test2.json,./json22/test3.json
