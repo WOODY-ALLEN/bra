@@ -43,8 +43,8 @@ jobs:
           pwd
           ls
 
-#      - name: Validate JSON
-#        uses: docker://orrosenblatt/validate-json-action:latest
-#        env:
-#          INPUT_SCHEMA: ./test.json
-#          INPUT_JSONS: ./test2.json,./test3.json
+      - name: Validate JSON
+        uses: docker://orrosenblatt/validate-json-action:latest
+        env:
+          INPUT_SCHEMA: ./test.json
+          INPUT_JSONS: ./test2.json,./test3.json
