@@ -1,8 +1,9 @@
-name: jsonnet Lint  # feel free to pick your own name
+name: JSON check  # feel free to pick your own name
 
-on: [push, pull_request]
- 
-
+on:
+  push:
+    paths:
+      - '**.json'
 jobs:
   json-validation:
     runs-on: ubuntu-latest
