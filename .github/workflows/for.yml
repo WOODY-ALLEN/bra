@@ -1,25 +1,16 @@
 name: jsonnet Lint  # feel free to pick your own name
 
 on: [push, pull_request]
+ 
 
 jobs:
-  build:
-
+  json-validation:
     runs-on: ubuntu-latest
-
     steps:
-    # Important: This sets up your GITHUB_WORKSPACE environment variable
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
+      - name: Source schema validator
+        uses: nhalstead/validate-json-action@0.1.3
+        with:
+          schema: ./json/json2/test.json
+          jsons: ./json/json2/test2.json,./json/json2/test3.json
 
-    - name: Lint jsonnet
-      # replace "master" with any valid ref
-      uses: dadav/jsonnet-lint-action@master
-      with:
-        # [required]
-        # Paths to jsonnet files (i.e., .jsonnet, .libsonnet etc..)
-        # or valid jsonnet directories with globs.
-        # If you want to lint multiple jsonnet files, use the following syntax
-        # targets: |
-        #   config.jsonnet
-        #   templates.libsonnet
-        targets: ""
