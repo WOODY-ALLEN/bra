@@ -13,4 +13,3 @@ jobs:
         with:
           schema: ./json/json2/test.json
           jsons: ./json/*/*.json
-
