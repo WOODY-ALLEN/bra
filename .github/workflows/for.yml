@@ -1,17 +1,17 @@
-# name: JSON check (demo)
+name: JSON check (demo)
 
-# on:
-#   push:
-#     paths:
-#       - '**.json'
-#   pull_request:
+on:
+  push:
+    paths:
+      - '**.json1'
+ 
 
-# jobs:
-#   test:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v2
-#       - name: json-syntax-check
-#         uses: ./
-#         with:
-#           pattern: "ok_[0-9]+\\.json$"
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: json-syntax-check
+        uses: ./
+        with:
+          pattern: "ok_[0-9]+\\.json$"
