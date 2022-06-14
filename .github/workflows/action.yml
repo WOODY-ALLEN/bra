@@ -1,17 +1,15 @@
-name: JSON check (demo)
-
-on:
-  push:
-    paths:
-      - '**.json'
-  pull_request:
+on: [push]
 
 jobs:
-  test:
+  hello_world_job:
     runs-on: ubuntu-latest
+    name: A job to say hello
     steps:
-      - uses: actions/checkout@v2
-      - name: json-syntax-check
-        uses: ./
+      - name: Hello world action step
+        id: hello
+        uses: WOODY-ALLEN/testjs@v1.1
         with:
-          pattern: "ok_[0-9]+\\.json$"
+          who-to-greet: 'Mona the Octocat'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
