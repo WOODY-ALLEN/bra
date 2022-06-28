@@ -1,34 +1,29 @@
+
 on:
   workflow_dispatch:
     inputs:
       logLevel:
         description: 'Log level'
         required: true
-        default: 'warning' 
+        default: 'warning'
         type: choice
         options:
         - info
         - warning
-        - debug 
-      print_tags:
-        description: 'True to print to STDOUT'
-        required: true 
-        type: boolean 
-      tags:
-        description: 'Test scenario tags'
-        required: true 
+        - debug
+      need_to_deploy_to_stg:
+        required: true
+        type: boolean
+        default: false
+      branch_name:
+        description: 'branch that you want to build from'
+        required: true
         type: string
-      tags2:
-        description: 'Test scenario tags2'
-        required: true 
-        default: '11'
-        type: string      
-
-
-jobs:
-  print-tag:
-    runs-on: ubuntu-latest
-    if:  ${{ github.event.inputs.print_tags == 'true' }} 
-    steps:
-      - name: Print the input tag to STDOUT
-        run: echo  The tags are ${{ github.event.inputs.tags }} 
+      ecr_region_name:
+        description: 'like name shows'
+        required: true
+        type: string
+      environment:
+        description: 'Environment to run tests against'
+        type: environment
+        required: true
