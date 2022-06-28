@@ -12,6 +12,7 @@ on:
         - warning
         - debug
       need_to_deploy_to_stg:
+        description: 'bssssssrom'
         required: true
         type: boolean
         default: false
